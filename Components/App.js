@@ -1,46 +1,28 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import React from 'react';
+import { View } from 'react-native';
 
-class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
+import styles from './style';
+
+const App = () => {
+  return (
+    <View style={styles.parent}>
+      <View style={styles.topBlock}>
+        <View style={styles.leftCol}>
+          <View style={[styles.cellOne, styles.base]} />
+          <View style={[styles.base, styles.cellTwo]} />
+        </View>
+        <View style={[styles.cellThree, styles.base]} />
       </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+      <View style={styles.bottomBlock}>
+        <View style={[styles.cellFour, styles.base]} />
+        <View style={[styles.cellFive, styles.base]} />
+        <View style={styles.bottomRight}>
+          <View style={[styles.cellSix, styles.base]} />
+          <View style={[styles.cellSeven, styles.base]} />
+        </View>
+      </View>
+    </View>
+  );
+};
 
 export default App;
